@@ -1,8 +1,9 @@
 CC = g++
-CFLAGS = 
+CFLAGS = -lpthread -pthread -DBOOST_ERROR_CODE_HEADER_ONLY
 
 build:
-	$(CC) $(CFLAGS) test.cpp -o bin/program -lpthread -pthread -DBOOST_ERROR_CODE_HEADER_ONLY
+	mkdir bin
+	$(CC) main.cpp -o bin/program $(CFLAGS)
 
 run:
 	make build
